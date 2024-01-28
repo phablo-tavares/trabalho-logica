@@ -78,7 +78,7 @@ escrevaFim :- repeat,
     write('escrefa a sua palavra: '),
     read(Palavra),nl,
     (
-                      (Palavra == fim -> !);
+                      (Palavra == fim ,!);
                       (processar(Palavra),fail)
     ).
 
