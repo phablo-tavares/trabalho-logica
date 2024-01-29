@@ -78,8 +78,19 @@ escrevaFim :- repeat,
     write('escrefa a sua palavra: '),
     read(Palavra),nl,
     (
-                      (Palavra == fim ,!);
+                      (Palavra == fim -> !);
                       (processar(Palavra),fail)
     ).
 
 processar(Palavra) :- write('Palavra: '),write(Palavra),nl.
+
+xEstaNaLista(X , [X|_]). %achou o elemento a ser buscado
+xEstaNaLista(X , [_|Tail]) :- xEstaNaLista(X ,Tail). %vai para o proximo elemento da lista
+
+
+
+ehUltimo(X,[X]).
+ehUltimo(X,[_|Tail]) :- ehUltimo(X,Tail).
+
+tamanho(0,[_|Tail]) :- (Tail =:= []).
+tamanho(T,[_|Tail]) :- tamanho(T)

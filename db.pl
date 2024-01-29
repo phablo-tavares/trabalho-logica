@@ -83,3 +83,14 @@ escrevaFim :- repeat,
     ).
 
 processar(Palavra) :- write('Palavra: '),write(Palavra),nl.
+
+xEstaNaLista(X , [X|_]). %achou o elemento a ser buscado
+xEstaNaLista(X , [_|Tail]) :- xEstaNaLista(X ,Tail). %vai para o proximo elemento da lista
+
+
+
+ehUltimo(X,[X]).
+ehUltimo(X,[_|Tail]) :- ehUltimo(X,Tail).
+
+tamanho([],0).
+tamanho([_|T],Tam) :- tamanho(T,Tam1), Tam is Tam1 + 1.
