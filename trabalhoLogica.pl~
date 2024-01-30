@@ -98,50 +98,25 @@ gerarIdUnicoParaOEmprestimo(IdUnico) :-
 
 
 
-consultarLivro(Titulo):-
-    livro(Titulo, Autor, Categoria, Ano),
+consultar_livro(Titulo):-
+    livro(_,Titulo, Autor, Categoria, Ano),
     format('Livro: ~w\nAutor: ~w\nCategoria: ~w\nAno: ~w\n\n',[Titulo, Autor, Categoria, Ano]),
     fail.
-	%fail faz continuar procurar pelos outros livros de msm titulo
-	%o ~w funciona como o %d em C, e o predicado format como o printf, o write ele so escreve,
-	%como o print do python
-
 consutar_autor(Autor):-
-    livro(Titulo, Autor, Categoria, Ano),
+    livro(_,Titulo, Autor, Categoria, Ano),
     format('Livro: ~w\nAutor: ~w\nCategoria: ~w\nAno: ~w\n\n',[Titulo, Autor, Categoria, Ano]),
     fail.
 consultar_categoria(Categoria):-
-    livro(Titulo, Autor, Categoria, Ano),
+    livro(_,Titulo, Autor, Categoria, Ano),
     format('Livro: ~w\nAutor: ~w\nCategoria: ~w\nAno: ~w\n\n',[Titulo, Autor, Categoria, Ano]),
     fail.
 consultar_ano(Ano):-
-    livro(Titulo, Autor, Categoria, Ano),
+    livro(_,Titulo, Autor, Categoria, Ano),
     format('Livro: ~w\nAutor: ~w\nCategoria: ~w\nAno: ~w\n\n',[Titulo, Autor, Categoria, Ano]),
     fail.
 consulta_intervalo_ano(AnoI, AnoF):-
-    livro(Titulo, Autor, Categoria, Ano),
+    livro(_,Titulo, Autor, Categoria, Ano),
     Ano >= AnoI,
     Ano =< AnoF,
     format('Livro: ~w\nAutor: ~w\nCategoria: ~w\nAno: ~w\n\n',[Titulo, Autor, Categoria, Ano]),
     fail.
-
-%PESQUISAS
-%consultar_livro('Frankenstein').
-%consultar_livro('O Corvo').
-%consultar_livro('1984').
-%consultar_livro('Dom Casmuro').
-%
-%consutar_autor('Shakespeare').
-%consutar_autor('Homero').
-%consutar_autor('Cervantes').
-%consutar_autor('Machado De Assis').
-%
-%consultar_categoria(poesia).
-%consultar_categoria(romace).
-%consultar_categoria(aventura).
-%consultar_categoria(drama).
-%
-%consultar_ano(1605).
-%consultar_ano(1932).
-%consultar_ano(1808).
-%consultar_ano(2024).
